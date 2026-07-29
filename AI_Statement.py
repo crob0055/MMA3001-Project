@@ -1,3 +1,0 @@
-The built in Google Gemini 2.5 LLM, ChatGPT, and Claude were used to 
-edit and format sections of this document, and generate some examples 
-of code, based on original content and prompt provided by the author.
