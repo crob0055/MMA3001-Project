@@ -1,0 +1,57 @@
+
+<table class="heading">
+<tr class="heading-text decor">
+<td class="title">&nbsp;<br><strong class="title"><a href="appletree.html" class="white">appletree</a>.data</strong></td>
+<td class="extra"><a href=".">index</a><br><a href="file:c%3A%5Cusers%5Croble%5Cdocuments%5Cchatgpt%5Cmma3001%5Cappletree%5Cdata.py">c:\users\roble\documents\chatgpt\mma3001\appletree\data.py</a></td></tr></table>
+    <p><span class="code">Read&nbsp;RGB,&nbsp;encoded&nbsp;depth&nbsp;and&nbsp;masks&nbsp;directly&nbsp;from&nbsp;the&nbsp;supplied&nbsp;ZIP.<br>
+&nbsp;<br>
+No&nbsp;source&nbsp;images&nbsp;are&nbsp;extracted&nbsp;or&nbsp;redistributed.&nbsp;Filename&nbsp;identities&nbsp;are&nbsp;the<br>
+available&nbsp;grouping&nbsp;evidence,&nbsp;not&nbsp;proof&nbsp;that&nbsp;different&nbsp;IDs&nbsp;are&nbsp;unrelated&nbsp;trees.</span></p>
+<p>
+<table class="section">
+<tr class="decor pkg-content-decor heading-text">
+<td class="section-title" colspan=3>&nbsp;<br><strong class="bigsection">Modules</strong></td></tr>
+    
+<tr><td class="decor pkg-content-decor"><span class="code">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></td><td>&nbsp;</td>
+<td class="singlecolumn"><table><tr><td class="multicolumn"><a href="PIL.Image.html">PIL.Image</a><br>
+<a href="io.html">io</a><br>
+</td><td class="multicolumn"><a href="numpy.html">numpy</a><br>
+<a href="random.html">random</a><br>
+</td><td class="multicolumn"><a href="re.html">re</a><br>
+</td><td class="multicolumn"></td></tr></table></td></tr></table><p>
+<table class="section">
+<tr class="decor functions-decor heading-text">
+<td class="section-title" colspan=3>&nbsp;<br><strong class="bigsection">Functions</strong></td></tr>
+    
+<tr><td class="decor functions-decor"><span class="code">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></td><td>&nbsp;</td>
+<td class="singlecolumn"><dl><dt><a name="-inventory"><strong>inventory</strong></a>(archive)</dt><dd><span class="code">Return&nbsp;complete&nbsp;labelled&nbsp;summer&nbsp;records&nbsp;and&nbsp;audit&nbsp;issues.<br>
+&nbsp;<br>
+Args:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;archive:&nbsp;Path&nbsp;to&nbsp;the&nbsp;original&nbsp;dataset&nbsp;ZIP.<br>
+Returns:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Tuple&nbsp;of&nbsp;record&nbsp;dictionaries&nbsp;and&nbsp;issues.&nbsp;Exact&nbsp;folder,&nbsp;tree,&nbsp;season&nbsp;and<br>
+&nbsp;&nbsp;&nbsp;&nbsp;timestamp&nbsp;must&nbsp;match.&nbsp;Duplicate&nbsp;modalities&nbsp;raise&nbsp;ValueError.</span></dd></dl>
+ <dl><dt><a name="-load_record"><strong>load_record</strong></a>(source, record, alignment_confirmed=False)</dt><dd><span class="code">Load&nbsp;a&nbsp;pair&nbsp;at&nbsp;mask&nbsp;resolution&nbsp;ONLY&nbsp;after&nbsp;full-frame&nbsp;alignment&nbsp;is&nbsp;confirmed.<br>
+&nbsp;<br>
+Args:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;source:&nbsp;Open&nbsp;ZipFile.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;record:&nbsp;An&nbsp;inventory&nbsp;record.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;alignment_confirmed:&nbsp;Caller&nbsp;has&nbsp;independently&nbsp;established&nbsp;that&nbsp;masks<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;correspond&nbsp;to&nbsp;full-frame&nbsp;resized&nbsp;inputs,&nbsp;rather&nbsp;than&nbsp;a&nbsp;crop/warp.<br>
+Returns:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;RGB&nbsp;uint8,&nbsp;encoded-depth&nbsp;uint8&nbsp;RGB&nbsp;and&nbsp;boolean&nbsp;target&nbsp;mask&nbsp;arrays.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Depth&nbsp;values&nbsp;are&nbsp;image&nbsp;codes,&nbsp;never&nbsp;metres.&nbsp;Zero&nbsp;is&nbsp;not&nbsp;assumed&nbsp;invalid.<br>
+Raises:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;ValueError:&nbsp;Alignment&nbsp;unconfirmed,&nbsp;unsupported&nbsp;shapes&nbsp;or&nbsp;nonbinary&nbsp;mask.</span></dd></dl>
+ <dl><dt><a name="-read_image"><strong>read_image</strong></a>(source, member)</dt><dd><span class="code">Return&nbsp;a&nbsp;copied&nbsp;NumPy&nbsp;image&nbsp;array&nbsp;from&nbsp;an&nbsp;open&nbsp;ZipFile&nbsp;member.</span></dd></dl>
+ <dl><dt><a name="-split_records"><strong>split_records</strong></a>(records, seed=42)</dt><dd><span class="code">Return&nbsp;deterministic&nbsp;60/20/20&nbsp;train/validation/test&nbsp;groups&nbsp;by&nbsp;tree&nbsp;ID.<br>
+&nbsp;<br>
+All&nbsp;observations&nbsp;sharing&nbsp;a&nbsp;tree&nbsp;ID&nbsp;stay&nbsp;together,&nbsp;including&nbsp;across&nbsp;folders.<br>
+Raises&nbsp;ValueError&nbsp;when&nbsp;fewer&nbsp;than&nbsp;five&nbsp;unique&nbsp;trees&nbsp;are&nbsp;available.</span></dd></dl>
+</td></tr></table><p>
+<table class="section">
+<tr class="decor data-decor heading-text">
+<td class="section-title" colspan=3>&nbsp;<br><strong class="bigsection">Data</strong></td></tr>
+    
+<tr><td class="decor data-decor"><span class="code">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></td><td>&nbsp;</td>
+<td class="singlecolumn"><strong>PATTERN</strong> = re.compile('(?P&lt;tree&gt;R\\d+[A-Za-z]+\\d+)_(?P&lt;sea...|Winter)_(?P&lt;kind&gt;RGB|D|GT)-(?P&lt;time&gt;.+)\\.png$')</td></tr></table>

@@ -1,0 +1,74 @@
+
+<table class="heading">
+<tr class="heading-text decor">
+<td class="title">&nbsp;<br><strong class="title"><a href="appletree.html" class="white">appletree</a>.model</strong></td>
+<td class="extra"><a href=".">index</a><br><a href="file:c%3A%5Cusers%5Croble%5Cdocuments%5Cchatgpt%5Cmma3001%5Cappletree%5Cmodel.py">c:\users\roble\documents\chatgpt\mma3001\appletree\model.py</a></td></tr></table>
+    <p><span class="code">Transparent&nbsp;Gaussian&nbsp;naive&nbsp;Bayes&nbsp;pixel&nbsp;baseline,&nbsp;implemented&nbsp;with&nbsp;NumPy.<br>
+&nbsp;<br>
+Assumes&nbsp;conditionally&nbsp;independent&nbsp;Gaussian&nbsp;feature&nbsp;channels.&nbsp;This&nbsp;is&nbsp;an&nbsp;initial<br>
+baseline,&nbsp;not&nbsp;a&nbsp;claim&nbsp;that&nbsp;this&nbsp;assumption&nbsp;represents&nbsp;orchard&nbsp;images&nbsp;well.</span></p>
+<p>
+<table class="section">
+<tr class="decor pkg-content-decor heading-text">
+<td class="section-title" colspan=3>&nbsp;<br><strong class="bigsection">Modules</strong></td></tr>
+    
+<tr><td class="decor pkg-content-decor"><span class="code">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></td><td>&nbsp;</td>
+<td class="singlecolumn"><table><tr><td class="multicolumn"><a href="numpy.html">numpy</a><br>
+</td><td class="multicolumn"></td><td class="multicolumn"></td><td class="multicolumn"></td></tr></table></td></tr></table><p>
+<table class="section">
+<tr class="decor index-decor heading-text">
+<td class="section-title" colspan=3>&nbsp;<br><strong class="bigsection">Classes</strong></td></tr>
+    
+<tr><td class="decor index-decor"><span class="code">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></td><td>&nbsp;</td>
+<td class="singlecolumn"><dl>
+<dt class="heading-text"><a href="builtins.html#object">builtins.object</a>
+</dt><dd>
+<dl>
+<dt class="heading-text"><a href="appletree.model.html#GaussianPixels">GaussianPixels</a>
+</dt></dl>
+</dd>
+</dl>
+ <p>
+<table class="section">
+<tr class="decor title-decor heading-text">
+<td class="section-title" colspan=3>&nbsp;<br><a name="GaussianPixels">class <strong>GaussianPixels</strong></a>(<a href="builtins.html#object">builtins.object</a>)</td></tr>
+    
+<tr><td class="decor title-decor" rowspan=2><span class="code">&nbsp;&nbsp;&nbsp;</span></td>
+<td class="decor title-decor" colspan=2><span class="code">Binary&nbsp;Gaussian&nbsp;naive&nbsp;Bayes&nbsp;with&nbsp;explicit&nbsp;variance&nbsp;regularisation.<br>&nbsp;</span></td></tr>
+<tr><td>&nbsp;</td>
+<td class="singlecolumn">Methods defined here:<br>
+<dl><dt><a name="GaussianPixels-fit"><strong>fit</strong></a>(self, x, y, variance_floor=0.0001)</dt><dd><span class="code">Fit&nbsp;class&nbsp;means,&nbsp;variances&nbsp;and&nbsp;empirical&nbsp;priors;&nbsp;return&nbsp;self.<br>
+&nbsp;<br>
+Args:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;x:&nbsp;Finite&nbsp;NxF&nbsp;feature&nbsp;matrix.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;y:&nbsp;Binary&nbsp;N-element&nbsp;labels;&nbsp;both&nbsp;classes&nbsp;must&nbsp;be&nbsp;present.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;variance_floor:&nbsp;Positive&nbsp;variance&nbsp;floor&nbsp;to&nbsp;prevent&nbsp;singular&nbsp;density.<br>
+Raises:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;ValueError:&nbsp;Invalid&nbsp;arrays,&nbsp;absent&nbsp;classes&nbsp;or&nbsp;nonpositive&nbsp;floor.</span></dd></dl>
+
+<dl><dt><a name="GaussianPixels-predict_proba"><strong>predict_proba</strong></a>(self, x)</dt><dd><span class="code">Return&nbsp;foreground&nbsp;probabilities&nbsp;using&nbsp;log&nbsp;densities&nbsp;for&nbsp;stability.<br>
+&nbsp;<br>
+Args:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;x:&nbsp;Finite&nbsp;NxF&nbsp;features&nbsp;with&nbsp;the&nbsp;fitted&nbsp;number&nbsp;of&nbsp;channels.<br>
+Raises:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;ValueError:&nbsp;Unfitted&nbsp;model&nbsp;or&nbsp;invalid&nbsp;feature&nbsp;matrix.</span></dd></dl>
+
+<hr>
+Data descriptors defined here:<br>
+<dl><dt><strong>__dict__</strong></dt>
+<dd><span class="code">dictionary&nbsp;for&nbsp;instance&nbsp;variables</span></dd>
+</dl>
+<dl><dt><strong>__weakref__</strong></dt>
+<dd><span class="code">list&nbsp;of&nbsp;weak&nbsp;references&nbsp;to&nbsp;the&nbsp;object</span></dd>
+</dl>
+</td></tr></table></td></tr></table><p>
+<table class="section">
+<tr class="decor functions-decor heading-text">
+<td class="section-title" colspan=3>&nbsp;<br><strong class="bigsection">Functions</strong></td></tr>
+    
+<tr><td class="decor functions-decor"><span class="code">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></td><td>&nbsp;</td>
+<td class="singlecolumn"><dl><dt><a name="-features"><strong>features</strong></a>(rgb, depth=None)</dt><dd><span class="code">Return&nbsp;normalized&nbsp;RGB,&nbsp;optionally&nbsp;followed&nbsp;by&nbsp;three&nbsp;encoded-depth&nbsp;channels.<br>
+&nbsp;<br>
+Inputs&nbsp;must&nbsp;be&nbsp;matching&nbsp;HxWx3&nbsp;uint8&nbsp;arrays.&nbsp;Returns&nbsp;(H*W)x3&nbsp;or&nbsp;x6&nbsp;float64.<br>
+No&nbsp;camera&nbsp;calibration,&nbsp;physical&nbsp;distance&nbsp;or&nbsp;invalid-depth&nbsp;rule&nbsp;is&nbsp;inferred.</span></dd></dl>
+</td></tr></table>

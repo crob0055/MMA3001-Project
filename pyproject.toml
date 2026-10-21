@@ -1,0 +1,13 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "mma3001-apple-tree-segmentation"
+version = "0.1.0"
+description = "Reproducible RGB versus encoded-depth apple-tree segmentation experiments"
+requires-python = ">=3.10"
+dependencies = ["numpy>=1.24,<3", "Pillow>=10,<13"]
+
+[tool.setuptools.packages.find]
+include = ["appletree*"]
