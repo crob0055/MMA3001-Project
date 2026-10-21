@@ -35,7 +35,7 @@ unit overview; no due dates are invented here. Project weight: 25% (p. 1).
 - [x] Create README, dependencies, logical package structure and code licence.
 - [x] Provide consistent function docstrings and useful implementation comments.
 - [x] Generate initial HTML source-code documentation; review/regenerate as code evolves.
-- [ ] Establish GitHub repository and functional main branch.
+- [x] Connect existing private GitHub repository and push working main branch.
 - [ ] Maintain meaningful development commits and clean reproducibility instructions.
 - [ ] Reproduce workflow from a fresh environment and check dependencies.
 - [ ] Provide accessible final repository link to assessor.

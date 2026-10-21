@@ -1,5 +1,9 @@
 # MMA3001 Project
 
+Repository: https://github.com/crob0055/MMA3001-Project (private; assessor access
+must be arranged before submission). Existing practice history and AI statement
+are preserved; this work adds the segmentation project.
+
 Investigating whether encoded depth improves summer apple-tree trunk and
 main-branch segmentation compared with RGB alone. Intended use: an initial
 perception stage for agricultural robots. This is not a complete picking system,
